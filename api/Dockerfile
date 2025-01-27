@@ -1,4 +1,4 @@
-FROM buildpack-deps:buster AS isolate
+FROM arm64v8/buildpack-deps AS isolate
 RUN apt-get update && \
     apt-get install -y --no-install-recommends git libcap-dev && \
     rm -rf /var/lib/apt/lists/* && \
@@ -8,7 +8,7 @@ RUN apt-get update && \
     make -j$(nproc) install && \
     rm -rf /tmp/*
 
-FROM node:15.10.0-buster-slim
+FROM arm64v8/node:15.10.0-buster-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 

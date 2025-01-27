@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM arm64v8/debian:buster-slim
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y unzip autoconf build-essential libssl-dev \
         pkg-config zlib1g-dev libargon2-dev libsodium-dev libcurl4-openssl-dev \
